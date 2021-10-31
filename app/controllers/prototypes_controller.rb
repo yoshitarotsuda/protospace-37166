@@ -1,6 +1,7 @@
 class PrototypesController < ApplicationController
 
 def index
+  @prototypes = Prototype.all
 end
 
 def new
@@ -10,7 +11,7 @@ end
 def create
   @prototype = Prototype.new(prototype_params)
   if @prototype.save # ifの隣も実行するされる、saveメソッドがSQLの実行だけでなく、保存が出来たらture, バリデーションなどにより失敗したらfalseを返すため
-    redirect_to loot_path # pathのつけ忘れに注意
+    redirect_to root_path # pathのつけ忘れに注意
   else
     render 'new' 
   end
