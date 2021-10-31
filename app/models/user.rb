@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
-  validates :email, uniqueness: true # ユニーク制約(アプリケーション側)
+  # validates :email, uniqueness: true # ユニーク制約(アプリケーション側)
 
   with_options presence: true do #with_options オプションの記述をまとめるのに使える、if使用時の記述パターンに注意
     validates :name
