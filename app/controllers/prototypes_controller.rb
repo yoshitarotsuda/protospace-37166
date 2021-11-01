@@ -30,8 +30,8 @@ def update
   if @prototype.update(prototype_params)
     redirect_to prototype_path(@prototype.id)
   else
-    # redirect_to edit_prototype_path(@prototype.id) # 編集ページに戻 
-    render 'edit' # prototypeではNG @prototypeではOK
+    # redirect_to edit_prototype_path(@prototype.id) # 編集ページに戻る
+    render 'edit' # prototypeではNG 何故ならformに変数(id)が渡されないからである @prototypeではOK
   end
 end
 
