@@ -26,6 +26,13 @@ def edit
 end
 
 def update
+  @prototype = Prototype.find(params[:id])
+  if @prototype.update(prototype_params)
+    redirect_to prototype_path(@prototype.id)
+  else
+    # redirect_to edit_prototype_path(@prototype.id) # 編集ページに戻 
+    render 'edit' # prototypeではNG @prototypeではOK
+  end
 end
 
 private
