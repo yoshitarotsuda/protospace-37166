@@ -5,6 +5,6 @@
     <p class="card__summary">
       <%= protable.catch_copy %>
     </p>
-    <%= link_to protable.user.name, root_path, class: :card__user %>
+    <%= link_to protable.user.name, user_path(protable.user.id), class: :card__user %>
   </div>
 </div>
