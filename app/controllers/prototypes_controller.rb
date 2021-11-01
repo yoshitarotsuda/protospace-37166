@@ -18,6 +18,7 @@ def create
 end
 
 def show
+  @prototype = Prototype.find(params[:id])
 end
 
 private
