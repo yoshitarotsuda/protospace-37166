@@ -35,6 +35,9 @@ def update
   end
 end
 
+def destroy
+end
+
 private
 def prototype_params # ストロングパラメーター設定,user_idの結合
   params.require(:prototype).permit(:title, :catch_copy, :concept, :image).merge(user_id: current_user.id)
