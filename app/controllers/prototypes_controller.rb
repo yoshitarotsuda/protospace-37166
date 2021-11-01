@@ -1,4 +1,5 @@
 class PrototypesController < ApplicationController
+before_action :authenticate_user!, except: [:index,:show]
 
 def index
   @prototypes = Prototype.all
@@ -26,7 +27,10 @@ def show
 end
 
 def edit
-  @prototype = Prototype.find(params[:id])
+  @prototype = Prototype.find(params[:id]) 
+  unless user_signed_in? && current_user.id == @prototype.user_id # authenticate_user!のみの制限で良いかと考えたが、よくよく考えると別のログインユーザーが編集できてしまうので必要でした。
+    redirect_to root_path
+  end
 end
 
 def update # updateアクションを実行するとupdateパスに置き換わる？イメージ
