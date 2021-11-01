@@ -10,7 +10,7 @@ class CreatePrototypes < ActiveRecord::Migration[6.0]
   end
 end
 
-# 外部キーのカラムの追加reference型を使うメリット
+# 外部キーのカラムの追加にreference型を使うメリット
 # userではなくuser_idというカラム名を作成してくれる
 # インデックスを自動で貼ってくれる
 # 注)外部キー制約はreferenceだけでは付かないことに気を付ける
