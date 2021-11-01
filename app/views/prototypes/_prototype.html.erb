@@ -1,7 +1,7 @@
 <div class="card">
-  <%= link_to image_tag(protable.image, class: :card__img ), root_path%>
+  <%= link_to image_tag(protable.image, class: :card__img ), prototype_path(protable.id) %>
   <div class="card__body">
-    <%= link_to protable.title, root_path, class: :card__title%>
+    <%= link_to protable.title, prototype_path(protable.id), class: :card__title%>
     <p class="card__summary">
       <%= protable.catch_copy %>
     </p>

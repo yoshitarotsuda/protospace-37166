@@ -9,7 +9,7 @@
     <% end %>
     <div class="card__wrapper">
       <%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>
-      <%= render partial: "prototype", collection: @prototypes, as: "protable" %>
+      <%= render partial: "prototype", collection: @prototypes, as: "protable" %> <%# asで変数の値を指定できる、デフォルトはpartialの指定名%>
     </div>
   </div>
 </main>
