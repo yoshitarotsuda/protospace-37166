@@ -25,7 +25,7 @@ def edit
   @prototype = Prototype.find(params[:id])
 end
 
-def update
+def update # updateアクションを実行するとupdateパスに置き換わる？イメージ
   @prototype = Prototype.find(params[:id])
   if @prototype.update(prototype_params)
     redirect_to prototype_path(@prototype.id)

@@ -14,11 +14,6 @@ class User < ApplicationRecord
   end
 
   has_many :prototypes
+  has_many :comments
 
 end
-
-
-
-
-# validatesメモ
-# 
