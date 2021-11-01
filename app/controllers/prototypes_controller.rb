@@ -36,6 +36,9 @@ def update
 end
 
 def destroy
+  hoge = Prototype.find(params[:id])
+  hoge.destroy
+  redirect_to root_path  
 end
 
 private
