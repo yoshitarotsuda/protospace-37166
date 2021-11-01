@@ -22,6 +22,7 @@ def show
 end
 
 def edit
+  @prototype = Prototype.find(params[:id])
 end
 
 def update
