@@ -19,7 +19,10 @@ end
 
 def show
   @prototype = Prototype.find(params[:id])
-  @commnet = Comment.new
+  @comment = Comment.new
+  @comments = @prototype.comments.includes(:user) # アソシエーションしていることにより.commentsで全レコードを取得できる。
+  # モデル名.includes(:紐づくモデル名) 引数に指定された関連モデルを一度のアクセスでまとめて取得できる
+  # ここの中身をしっかり学習する
 end
 
 def edit
