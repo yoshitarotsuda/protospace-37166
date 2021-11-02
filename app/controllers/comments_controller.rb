@@ -7,6 +7,7 @@ class CommentsController < ApplicationController
       redirect_to prototype_path(params[:prototype_id])
     else
       @prototype = Prototype.find(params[:prototype_id])
+      @comments = @prototype.comments.includes(:user)
       render 'prototypes/show' # renderでクラス外のビューファイルを指定する場合、インスタンス変数を渡す
     end
 
